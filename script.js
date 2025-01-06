@@ -3,6 +3,7 @@ const userInput = document.querySelector('.userInput');
 const chatlog = document.querySelector(".chatlog");
 const inputForm = document.querySelector('.inputForm');
 const changeAvatarBtn = document.querySelector('.changeAvatarBtn')
+const avatarModal = document.querySelector('.avatarModal');
 
 const avatars = [
     'Ryuji',
@@ -46,8 +47,11 @@ function addNewMsg(e) {
     chatlog.scrollTop = chatlog.scrollHeight;
 }
 
+function populateModal() {
+
+} 
+
 function showModal() {
-    const avatarModal = document.querySelector('.avatarModal');
 
     avatars.forEach((a) => {        
         let avImg = document.createElement('p');
