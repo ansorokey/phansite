@@ -1,17 +1,17 @@
 const avatars = [
     {
         name: 'name',
-        color: '',
+        color: 'red',
         imgSrc: ''
     },
     {
         name: 'name',
-        color: '',
+        color: 'blue',
         imgSrc: ''
     },
     {
         name: 'name',
-        color: '',
+        color: 'yellow',
         imgSrc: ''
     },
     {

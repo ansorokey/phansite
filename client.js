@@ -49,7 +49,12 @@ function populateModal() {
     avatars.forEach(a => {
         const newAv = document.createElement('img');
         newAv.classList.add('avatar');
-        newAv.setAttribute('alttext', a.name);
+
+        newAv.addEventListener('click', () => {
+            userName = a.name;
+            myAvatar.src = a.imgSrc;
+            document.body.style.backgroundColor = a.color;
+        })
 
         avatarModal.appendChild(newAv);
     })
