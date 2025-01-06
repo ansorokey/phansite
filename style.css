@@ -2,6 +2,22 @@ body {
     background-color: #B40001;
 }
 
+.avatarModal {
+    display: none;
+    grid-template-columns: repeat(3, auto);   
+    grid-template-rows: repeat(auto, 50px); 
+    position: absolute;
+    z-index: 500;
+    width: 500px;
+    height: 500px;
+    background-color: black;
+    overflow-y: scroll;
+}
+
+.avatarModal p {
+    color: white;
+}
+
 .message-box {
     position: relative;
     width: fit-content;
@@ -56,6 +72,7 @@ body {
 .inputForm {
     position: fixed;
     bottom: 50px;
+    display: flex;
 }
 
 .chatlog {

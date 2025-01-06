@@ -2,13 +2,28 @@ const sendBtn = document.querySelector(".sendBtn");
 const userInput = document.querySelector('.userInput');
 const chatlog = document.querySelector(".chatlog");
 const inputForm = document.querySelector('.inputForm');
+const changeAvatarBtn = document.querySelector('.changeAvatarBtn')
+
+const avatars = [
+    'Ryuji',
+    'Ann',
+    'Yusuke',
+    'Makoto',
+    'Futaba',
+    'Haru',
+    'Takemi',
+    'Mishima',
+    'Ohya',
+    'Akechi',
+    'Sojiro'
+]
 
 function addNewMsg(e) {
     e.preventDefault()
 
     // No empty messages
     if (userInput.value.length === 0) return;
-    
+
     const newMsg = document.createElement('div');
     newMsg.classList.add('message-box');
 
@@ -31,4 +46,23 @@ function addNewMsg(e) {
     chatlog.scrollTop = chatlog.scrollHeight;
 }
 
+function showModal() {
+    const avatarModal = document.querySelector('.avatarModal');
+
+    avatars.forEach((a) => {        
+        let avImg = document.createElement('p');
+        avImg.innerText = a;
+
+        avImg.addEventListener('click', () => {
+            inputForm.querySelector('.avatar').innerText = avImg.innerText;
+            avatarModal.style.display = 'none';
+        })
+
+        avatarModal.appendChild(avImg);
+    });
+
+    avatarModal.style.display = 'grid';
+}
+
 inputForm.addEventListener('submit', addNewMsg);
+changeAvatarBtn.addEventListener('click', showModal);
