@@ -1,6 +1,59 @@
+/* ##### */
+/* ELEMENTS */
+/* ##### */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #B40001;
+    display: flex;
+    justify-content: center;
+    overflow-y: hidden;
 }
+
+/* ##### */
+/* IDS */
+/* ##### */
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    height: 100vh;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+#chatlog {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    border: 10px solid black;
+}
+
+#formBox {
+}
+
+#msgForm {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#msgInput {
+    width: 100%;
+}
+
+/* ##### */
+/* CLASSES */
+/* ##### */
+
+
+
 
 .avatarModal {
     display: none;
