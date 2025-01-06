@@ -57,7 +57,13 @@ socket.on('user-disconnected', user => {
 msgForm.addEventListener('submit', (e) => {
     e.preventDefault(); // Prevent page reload on form submit
 
+    
     const msg = msgInput.value; // get message text
+    if (msg.trim().length === 0) {
+        msgInput.value = ""; // clear input box
+        return; // prevent empty message  
+    } 
+
     socket.emit('send-chat-msg', msg); // send to server
     msgInput.value = ""; // clear input box
     appendMsg(msg, true); // add message to screen (local)
