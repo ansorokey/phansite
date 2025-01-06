@@ -22,15 +22,25 @@ function promptUser() {
 
 // Adds message to chatlog element
 function appendMsg(msg, self=false) {
-    const newMsg = document.createElement('p');
+    const newMsgBox = document.createElement('div');
+    // newMsgBox.classList.add('msgBox');
+    newMsgBox.classList.add('msg');    
+
     if(self) {
-        newMsg.classList.add('myMsg');
+        newMsgBox.classList.add('myMsg');
     } else {
-        newMsg.classList.add('otherMsg');
+        newMsgBox.classList.add('otherMsg');
+        const msgAvatar = document.createElement('img');
+        msgAvatar.classList.add('avatar');
+        msgAvatar.classList.add('otherAvatar');
+        newMsgBox.appendChild(msgAvatar);
     }
-    newMsg.classList.add('msg');
-    newMsg.innerText = msg;
-    chatlog.appendChild(newMsg);
+    
+    const newMsgText = document.createElement('p');
+    newMsgText.innerText = msg;
+
+    newMsgBox.appendChild(newMsgText)
+    chatlog.appendChild(newMsgBox);
 }
 
 // ##### 
