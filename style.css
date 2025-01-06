@@ -1,0 +1,70 @@
+body {
+    background-color: #B40001;
+}
+
+.message-box {
+    position: relative;
+    width: fit-content;
+    max-width: 300px;
+    height: fit-content;
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* background-color: #0F1C13;
+    width: fit-content;
+    max-width: 500px;
+    word-wrap: normal;
+    word-break: keep-all;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100px;
+    transform: skew(-35deg) translate(50%) perspective(100px);
+    transform: perspective(500px) translate3d(50px, 0, 10px) rotateY(330deg) skew(-35deg);
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
+    text-align: center; */
+}
+
+.message-box p {
+    color: white;
+    position: relative;
+    padding-left: 60px;
+    word-wrap: normal;
+    word-break: keep-all;
+    transform: none;
+}
+
+.message-box .background {
+    background-color: #0F1C13;
+    width: 100%;
+    height: 100%;
+    max-width: 300px;
+    transform: translateX(50px) skew(-35deg);
+    position: absolute;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border: 5px solid white;
+}
+
+.inputForm {
+    position: fixed;
+    bottom: 50px;
+}
+
+.chatlog {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    overflow-y: scroll;
+    max-height: 300px;
+    scroll-behavior: auto;
+
+    scrollbar-color: black;
+}
