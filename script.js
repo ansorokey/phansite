@@ -5,6 +5,10 @@ const inputForm = document.querySelector('.inputForm');
 
 function addNewMsg(e) {
     e.preventDefault()
+
+    // No empty messages
+    if (userInput.value.length === 0) return;
+    
     const newMsg = document.createElement('div');
     newMsg.classList.add('message-box');
 

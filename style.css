@@ -68,3 +68,9 @@ body {
 
     scrollbar-color: black;
 }
+
+.chatlog::-webkit-scrollbar {
+    color: black;
+    background-color: black;
+    background: black;
+}
