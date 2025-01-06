@@ -33,6 +33,9 @@ body {
     height: 100%;
     margin-bottom: 20px;
     border: 10px solid black;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
 }
 
 #formBox {
@@ -52,6 +55,22 @@ body {
 /* CLASSES */
 /* ##### */
 
+.msg {
+    width: fit-content;
+    padding: 10px 20px;
+    margin: 15px 30px;
+}
+
+.myMsg {
+    background-color: white;
+    color: black;
+    align-self: flex-end;
+}
+
+.otherMsg {
+    background-color: black;
+    color: white;
+}
 
 
 

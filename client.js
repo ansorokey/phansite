@@ -16,13 +16,19 @@ promptUser();
 
 // Ask user for name
 function promptUser() {
-    appendMsg('You joined');
+    appendMsg('Welcome, phantom', true);
     socket.emit('new-user', userName);    
 }
 
 // Adds message to chatlog element
-function appendMsg(msg) {
+function appendMsg(msg, self=false) {
     const newMsg = document.createElement('p');
+    if(self) {
+        newMsg.classList.add('myMsg');
+    } else {
+        newMsg.classList.add('otherMsg');
+    }
+    newMsg.classList.add('msg');
     newMsg.innerText = msg;
     chatlog.appendChild(newMsg);
 }
@@ -54,5 +60,5 @@ msgForm.addEventListener('submit', (e) => {
     const msg = msgInput.value; // get message text
     socket.emit('send-chat-msg', msg); // send to server
     msgInput.value = ""; // clear input box
-    appendMsg('You: ' + msg); // add message to screen (local)
+    appendMsg(msg, true); // add message to screen (local)
 })
