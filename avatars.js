@@ -50,3 +50,5 @@ const avatars = [
         imgSrc: ''
     }
 ]
+
+export default avatars;

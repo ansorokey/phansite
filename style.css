@@ -44,7 +44,7 @@ body {
 #msgForm {
     display: flex;
     justify-content: space-between;
-    
+    position: relative;
 }
 
 #msgInput {
@@ -84,6 +84,20 @@ body {
 .otherAvatar {
     position: absolute;
     left: -25%;
+}
+
+.avatarModal {
+    background-color: blue;
+    display: grid;
+    width: 80%;
+    height: 400px;
+    position: absolute;
+    bottom: 110%;
+    margin: auto;
+}
+
+.hidden {
+    display: none;
 }
 
 

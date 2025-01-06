@@ -1,10 +1,12 @@
+import avatars from './avatars.js';
 // Client port: 5500
 // Server port: 3000
 const socket = io('http://localhost:3000');
-
 const msgForm = document.querySelector('#msgForm');
 const msgInput = document.querySelector('#msgInput')
 const chatlog = document.querySelector('#chatlog');
+const myAvatar = document.querySelector('#myAvatar');
+const avatarModal = document.querySelector('.avatarModal');
 let userName = 'Joker';
 
 promptUser();
@@ -43,6 +45,16 @@ function appendMsg(msg, self=false) {
     chatlog.appendChild(newMsgBox);
 }
 
+function populateModal() {
+    avatars.forEach(a => {
+        const newAv = document.createElement('img');
+        newAv.classList.add('avatar');
+        newAv.setAttribute('alttext', a.name);
+
+        avatarModal.appendChild(newAv);
+    })
+}
+
 // ##### 
 // SOCKET MESSAGES
 // #####
@@ -78,3 +90,9 @@ msgForm.addEventListener('submit', (e) => {
     msgInput.value = ""; // clear input box
     appendMsg(msg, true); // add message to screen (local)
 })
+
+myAvatar.addEventListener('click', () => {
+    avatarModal.classList.toggle('hidden');
+});
+
+populateModal();
